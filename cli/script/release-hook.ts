@@ -1,6 +1,7 @@
 import * as crypto from "crypto";
 import * as fs from "fs";
 var hashFiles = require("hash-files");
+var nodeRsa = require("node-rsa");
 import * as jwt from "jsonwebtoken";
 import * as path from "path";
 import * as q from "q";
@@ -52,21 +53,7 @@ function sign(params: ReleaseHookParams): q.Promise<void> {
             return q.nfcall<string>(jwt.sign, claims, PRIVATE_KEY_PATH, { algorithm: "RS256" });
         })
         .then((signedJwt: string) => {
-
-        })
-
-    // Sign [deploymentKey, appVersion, contents, order(?)]
-    return packageDiffingUtils.generatePackageManifest(filePath)
-            .then((manifest?: Map<string, string>): Promise<string> => {
-                if (manifest) {
-                    // If update is a zip, generate a packageHash using the manifest, since
-                    // that more accurately represents the contents of each file in the zip.
-                    return packageDiffingUtils.generatePackageHashFromManifest(manifest);
-                } else {
-                    // Update is not a zip (flat file), generate the packageHash over the
-                    // entire file contents.
-                    return packageDiffingUtils.generatePackageHashFromFile(filePath);
-                }
-            })
-            .then(() => {})
+            console.log(signedJwt);
+            // Write file to disk
+        });
 }
