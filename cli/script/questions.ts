@@ -1,4 +1,21 @@
 `
+Components:
+
+Certificate generation/management
+    - User-generated? CLI generated?
+    - Use iOS/Android store certificate?
+
+Signing
+    - Sign contents only? More stuff?
+    - Build hook that can modify file contents (ts or js?)
+
+Verification
+    - Hook across multiple plugins (ts or js?)
+    - Allow different things to be verified?
+    - Allow encryption to be hooked in too?
+
+
+
 https://www.objc.io/issues/17-security/inside-code-signing/
 https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx
 https://www.raywenderlich.com/2915/ios-code-signing-under-the-hood
