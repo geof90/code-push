@@ -1,7 +1,12 @@
 `
+File hashing needs to be done on the native side.
+Signature/claims verification can be done on the js side.
+
+SHA-2 and SHA-3 are safe against collision attacks (probably use SHA-256). MD5 is not, and SHA-1 is very close to being broken.
+
 Components:
 
-Certificate generation/management
+Certificate generation/management (Ignore for now)
     - User-generated? CLI generated?
     - Use iOS/Android store certificate?
 
