@@ -25,13 +25,7 @@ var PRIVATE_KEY_PATH: string;
 
 interface CodeSigningClaims {
     version: string;
-    // deploymentKey: string;
-    // appStoreVersion: string;
     contentHash: string;
-}
-
-interface SignedMetadata extends CodeSigningClaims {
-    signature: string;
 }
 
 function sign(params: ReleaseHookParams): q.Promise<void> {

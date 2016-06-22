@@ -2,6 +2,13 @@
 File hashing needs to be done on the native side.
 Signature/claims verification can be done on the js side.
 
+Have them optional by default (for now, while we iron it out). Hooks:
+    - Read from package.json on the CLI end
+    - Expose custom functions to be used in syncStatusChanged callbacks on the plugins.
+
+Will need to implement native pieces for react-native, not necessarily for Cordova. Don't need to expose those pieces to users (it's up to
+them to use native plugins/etc if they want it).
+
 SHA-2 and SHA-3 are safe against collision attacks (probably use SHA-256). MD5 is not, and SHA-1 is very close to being broken.
 
 Components:
